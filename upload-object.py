@@ -18,13 +18,13 @@ def kickoff_subprocess(cmd, log_file_name):
     process = subprocess.call(cmd, shell=True)
     file = open(log_file_name, "a+")
     timestamp = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-    output = timestamp + " Command: "+ cmd[0] + " | Return Code: " + str(process) + "\n"
+    output = timestamp + " Command: "+ "cmd[0]" + " | Return Code: " + str(process) + "\n"
     file.write(output)
 
 
 def upload_output_to_S3(log_file_name):
     f = open(log_file_name, "rb")
-    s3.upload_fileobj(f, "<FMI1>"
+    s3.upload_fileobj(f, "testing-code-py"
 , log_file_name)
 
 
